@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "c1a6d2ae-e287-47c4-8c0a-82fd2a1e7d93",
+		"name": "GestionDocumental",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33856284"
+	},
+	"item": [
+		{
+			"name": "getDocuments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/documents",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDocumentsById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/documents/:id",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"documents",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "c3d942b9-1f7b-475c-8f45-f3e99699c162"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createDocument",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Big Bang\",\r\n    \"content\":\"Este es un contenido de inicio\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/documents",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"documents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generatePdf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Esto es una prueba para validar el endpoint hecho con Python + Flask y adicional una libreria que genera un pdf a partir de este texto que se esta enviando.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/create_pdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"create_pdf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
